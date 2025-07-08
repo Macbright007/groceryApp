@@ -6,7 +6,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-body{
+body {
   scroll-behavior: smooth;
 }
 
@@ -23,6 +23,11 @@ nav {
   top: 0;
   z-index: 1;
   background-color: #f6f6f6;
+}
+
+.hamburger,
+#toggle {
+  display: none;
 }
 
 .genLayout {
@@ -474,9 +479,56 @@ nav {
 
 /* responsive code */
 @media (min-width: 260px) and (max-width: 460px) {
+  .hamburger {
+    display: block; /*code to show hamburger*/
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    color: #178255;
+    font-weight: 800;
+  }
+
   .navRight {
     display: none;
+    position: absolute;
+    width: 85%;
+    padding: 1.4rem 1rem;
+    top: 3.5rem;
+    right: 3px;
+    z-index: 1;
+    background-color: #0a0701;
+    opacity: 0.8;
+    border-bottom: 4px solid #fff;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
+
+  .navItems{
+    flex-direction: column;
+  }
+
+  .navItems > a{
+    color: #fff;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+  }
+
+   .navIcons {
+    padding: 0;
+    border-left: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .navIcons > span {
+    font-size: 1rem;
+    color: #fff;
+  }
+
+    #toggle:checked + .navRight {
+    display: block;
+    transform: none;
+  }
+
 
   .banner {
     width: calc(100% - 40px);
@@ -500,22 +552,23 @@ nav {
     gap: 2rem;
   }
 
-  .offerContent, .offerImg{
+  .offerContent,
+  .offerImg {
     width: 100%;
   }
 
-  .productCardWrapper{
-     width: 360px;
-     margin: 1rem auto;
-     grid-template-columns: 1fr;
+  .productCardWrapper {
+    width: 360px;
+    margin: 1rem auto;
+    grid-template-columns: 1fr;
   }
 
-  .summerDeals{
-     width: 360px;
-     grid-template-columns: 1fr;
+  .summerDeals {
+    width: 360px;
+    grid-template-columns: 1fr;
   }
 
-  .summerBoard{
+  .summerBoard {
     padding-block: 1rem;
   }
 }
